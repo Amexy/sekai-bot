@@ -2,7 +2,7 @@ import requests, json, aiohttp
 
 async def get_sekai_current_event_standings_api(event_id):
     async with aiohttp.ClientSession() as session:
-        api = f'https://raw.githubusercontent.com/Sekai-World/sekai-event-track/main/event{event_id}.json'
+        api = f'https://bitbucket.org/sekai-world/sekai-event-track/raw/main/event{event_id}.json'
         async with session.get(api) as r:
             return await r.json(content_type='text/plain')
 
